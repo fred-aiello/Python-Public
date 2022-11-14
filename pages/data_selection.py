@@ -7,6 +7,6 @@ import datetime as dt
 from datetime import datetime,timedelta
 
 
-select_eq=st.multiselect('AAPL','MSFT','TWTR','IBM','BAC','GS','JPM','MS','^FCHI')
-st.markdown('selection ',select_eq)
+select_eq=st.multiselect('select equity',['AAPL','MSFT','TWTR','IBM','BAC','GS','JPM','MS','^FCHI'])
+st.markdown('You selected ',select_eq)
 
