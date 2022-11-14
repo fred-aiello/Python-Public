@@ -7,6 +7,10 @@ import datetime as dt
 from datetime import datetime,timedelta
 
 
-select_eq=st.multiselect('select equity',['AAPL','MSFT','TWTR','IBM','BAC','GS','JPM','MS','^FCHI'])
+select_eq=st.multiselect('select equity',['AAPL','MSFT','TWTR','IBM','BAC','GS','JPM','MS','^GSPC','^FCHI'])
 st.write('You selected ',select_eq)
 
+start_date=dt.date.today()
+
+def delta_time(y,m,d):
+timedelta(
