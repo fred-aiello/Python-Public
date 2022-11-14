@@ -8,5 +8,5 @@ from datetime import datetime,timedelta
 
 
 select_eq=st.multiselect('select equity',['AAPL','MSFT','TWTR','IBM','BAC','GS','JPM','MS','^FCHI'])
-st.markdown('You selected ',select_eq)
+st.write('You selected ',select_eq)
 
