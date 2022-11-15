@@ -21,27 +21,27 @@ with col1:
 
 with col2:
    if st.button('5D'):
-     st.write(start_date-timedelta(days=5))
+     st.write(start_date-pd.DateOffset(days=5))
 
 with col3:
   if st.button('1M'):
-    st.write(start_date-timedelta(months=1))
+    st.write(start_date-pd.DateOffset(months=1))
 
 with col4:
   if st.button('6M'):
-    st.write(start_date-timedelta(months=6))
+    st.write(start_date-pd.DateOffset(months=6))
 
 with col5:
   if st.button('YTD'):
-    st.write(start_date)
+    st.write(start_date-pd.DateOffset(months=1))
 
 with col6:
   if st.button('1Y'):
-    st.write(start_date)
+    st.write(start_date-pd.DateOffset(years=1))
 
 with col7:
   if st.button('5Y'):
-    st.write(start_date)
+    st.write(start_date-pd.DateOffset(years=5))
 
 with col8:
   if st.button('Max'):
