@@ -16,36 +16,36 @@ start_date=dt.date.today()
 col1, col2,col3, col4, col5,col6,col7,col8=st.columns(8)
 
 with col1:
-if st.button('1D'):
-st.write(start_date)
+  if st.button('1D'):
+    st.write(start_date)
 
 with col2:
-if st.button('5D'):
-st.write(start_date+timedelta(days=-5))
+  if st.button('5D'):
+    st.write(start_date+timedelta(days=-5))
 
 with col3:
-if st.button('1M'):
-st.write(start_date+timedelta(months=-1))
+  if st.button('1M'):
+    st.write(start_date+timedelta(months=-1))
 
 with col4:
-if st.button('6M'):
-st.write(start_date+timedelta(months=-6))
+  if st.button('6M'):
+    st.write(start_date+timedelta(months=-6))
 
 with col5:
-if st.button('YTD'):
-st.write(start_date)
+  if st.button('YTD'):
+    st.write(start_date)
 
 with col6:
-if st.button('1Y'):
-st.write(start_date)
+  if st.button('1Y'):
+    st.write(start_date)
 
 with col7:
-if st.button('5Y'):
-st.write(start_date)
+  if st.button('5Y'):
+    st.write(start_date)
 
 with col8:
-if st.button('Max'):
-st.write(start_date)
+  if st.button('Max'):
+    st.write(start_date)
 
 
 start = dt.datetime(1980,1,1) #(2013, 1,1) #1980, 1, 1)
