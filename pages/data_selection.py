@@ -2,7 +2,7 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as PLT
-import pandas_datareader.data as wb
+import pandas_datareader as wb
 import datetime as dt
 from datetime import datetime,timedelta
 
@@ -21,15 +21,15 @@ with col1:
 
 with col2:
    if st.button('5D'):
-     st.write(start_date+timedelta(days=-5))
+     st.write(start_date-timedelta(days=5))
 
 with col3:
   if st.button('1M'):
-    st.write(start_date+timedelta(months=-1))
+    st.write(start_date-timedelta(months=1))
 
 with col4:
   if st.button('6M'):
-    st.write(start_date+timedelta(months=-6))
+    st.write(start_date-timedelta(months=6))
 
 with col5:
   if st.button('YTD'):
