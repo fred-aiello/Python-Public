@@ -74,6 +74,6 @@ df.columns=list(tickers.keys())
 
 df
 
-def delta_time(y,m,d):
+#def delta_time(y,m,d):
 
-timedelta(
+  #timedelta(
