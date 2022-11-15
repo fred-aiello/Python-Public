@@ -48,7 +48,31 @@ if st.button('Max'):
 st.write(start_date)
 
 
+start = dt.datetime(1980,1,1) #(2013, 1,1) #1980, 1, 1)
+end = dt.datetime(2022, 10, 1)
 
+tickers = {
+    "SP500": "^GSPC",
+    "CAC40": "^FCHI",
+}
+
+print(list(tickers.keys()))
+
+#['AAPL', 'NKE', 'GOOGL','AMZN']
+
+price_data = web.DataReader(list(tickers.values()),
+
+                        'yahoo',start) ['Adj Close'] #'yahoo', start, end) ['Close']#['Adj Close']
+
+ 
+
+df=price_data.copy()
+
+print(df.columns)
+
+df.columns=list(tickers.keys())
+
+df
 
 def delta_time(y,m,d):
 
