@@ -16,12 +16,12 @@ start_date=dt.date.today()
 col1, col2,col3, col4, col5,col6,col7,col8=st.columns(8)
 
 with col1:
-    st.button('1D')
-    st.write(start_date)
+    if st.button('1D'):
+      st.write(start_date)
 
 with col2:
-   st.button('5D')
-   st.write(start_date+timedelta(days=-5))
+   if st.button('5D'):
+     st.write(start_date+timedelta(days=-5))
 
 with col3:
   if st.button('1M'):
