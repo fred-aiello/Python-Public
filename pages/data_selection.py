@@ -72,7 +72,7 @@ print(df.columns)
 
 df.columns=list(tickers.keys())
 
-df
+st.dataframe(df)
 
 #def delta_time(y,m,d):
 
