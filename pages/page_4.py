@@ -2,7 +2,7 @@
 import streamlit as st
 
 st.set_page_config(
-    page_title="Hello",
+    page_title="Hello Fred",
     page_icon="👋",
     menu_items={
     'Get Help':'https://www.yahoo.fr',
