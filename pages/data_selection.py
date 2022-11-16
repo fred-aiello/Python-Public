@@ -1,4 +1,4 @@
-import streamlit as st
+Deimport streamlit as st
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as PLT
@@ -21,7 +21,7 @@ with col1:
 
 with col2:
    if st.button('5D'):
-     st.write(start_date-pd.DateOffset(days=5).date())
+     st.write(start_date-pd.DateOffset(days=5))
 
 with col3:
   if st.button('1M'):
