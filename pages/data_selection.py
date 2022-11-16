@@ -21,7 +21,7 @@ with col1:
 
 with col2:
    if st.button('5D'):
-     st.write(start_date-pd.DateOffset(days=5))
+     st.write(start_date-pd.DateOffset(days=5).date)
 
 with col3:
   if st.button('1M'):
