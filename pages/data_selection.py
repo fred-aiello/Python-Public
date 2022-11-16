@@ -33,7 +33,7 @@ with col4:
 
 with col5:
   if st.button('YTD'):
-    st.write(dt.date(start_date.year,1,1)
+    st.write(dt.date(start_date.year,1,1))
 
 with col6:
   if st.button('1Y'):
