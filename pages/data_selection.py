@@ -6,8 +6,16 @@ import pandas_datareader as wb
 import datetime as dt
 from datetime import datetime,timedelta
 
+tickers = {
+    "SP500": "^GSPC",
+    "CAC40": "^FCHI",
+    "Apple":'AAPL',
+    "Twitter":'TWTR',
+    "JP Morgan":'JPM',
+}
 
-select_eq=st.multiselect('select equity',['AAPL','MSFT','TWTR','IBM','BAC','GS','JPM','MS','^GSPC','^FCHI'])
+
+select_eq=st.multiselect('select equity',list(tickers.keys()))
 st.write('You selected ',select_eq)
 
 start_date=dt.date.today()
@@ -21,7 +29,8 @@ with col1:
 
 with col2:
    if st.button('5D'):
-     st.write(start_date-pd.DateOffset(days=5))
+     new_date=start_date-pd.DateOffset(days=5)
+     st.write(new_date.date())
 
 with col3:
   if st.button('1M'):
@@ -67,8 +76,6 @@ price_data = web.DataReader(list(tickers.values()),
  
 
 df=price_data.copy()
-
-print(df.columns)
 
 df.columns=list(tickers.keys())
 
