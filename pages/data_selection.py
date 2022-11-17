@@ -17,7 +17,7 @@ tickers = {
 
 select_eq=st.multiselect('select equity',tickers)
 
-st.write('You selected ', select_eq.type())
+st.write('You selected ', type(select_eq))
 
 start_date=dt.date.today()
 
