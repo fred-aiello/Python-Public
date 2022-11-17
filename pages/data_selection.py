@@ -57,22 +57,19 @@ with col5:
 
 with col6:
   if st.button('1Y'):
-    new_date=start_date-pd.DateOffset(days=5)
+    new_date=start_date-pd.DateOffset(years=1)
     st.write(new_date.date())
-start_date-pd.DateOffset(years=1))
 
 with col7:
   if st.button('5Y'):
-    new_date=start_date-pd.DateOffset(days=5)
+    new_date=start_date-pd.DateOffset(years=5)
     st.write(new_date.date())
-start_date-pd.DateOffset(years=5))
 
 with col8:
   if st.button('Max'):
     new_date=start_date-pd.DateOffset(days=5)
     st.write(new_date.date())
 start_date)
-
 
 
 
