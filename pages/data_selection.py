@@ -17,16 +17,21 @@ tickers = {
 
 select_eq=st.multiselect('select equity',tickers)
 selection= [tickers[I] for I in select_eq]
-st.write('You selected ', selection)
+st.write('You selected ', list(selection))
 
 start_date=dt.date.today()
+end_date = dt.datetime(1980,1,1) #(2013, 1,1) #1980, 1, 1)
+
+price_data = wb.DataReader(list(tickers.values()),
+
+                        'yahoo',end_date) ['Adj Close'] #'yahoo', start, end) ['Close']#['Adj Close']
 
 
 col1, col2,col3, col4, col5,col6,col7,col8=st.columns(8)
 
 with col1:
     if st.button('1D'):
-      st.write(start_date)
+      st.dataframe(price_data.loc[price_data['Date']<=start_date])
 
 with col2:
    if st.button('5D'):
@@ -35,44 +40,46 @@ with col2:
 
 with col3:
   if st.button('1M'):
-    st.write(start_date-pd.DateOffset(months=1))
+    new_date=start_date-pd.DateOffset(months=1))
+    st.write(new_date.date())
 
 with col4:
   if st.button('6M'):
-    st.write(start_date-pd.DateOffset(months=6))
+    new_date=start_date-pd.DateOffset(months=6)
+    st.write(new_date.date())
 
 with col5:
   if st.button('YTD'):
-    st.write(dt.date(start_date.year,1,1))
+    new_date=dt.date(start_date.year,1,1)
+    st.write()
+
+
 
 with col6:
   if st.button('1Y'):
-    st.write(start_date-pd.DateOffset(years=1))
+    new_date=start_date-pd.DateOffset(days=5)
+    st.write(new_date.date())
+start_date-pd.DateOffset(years=1))
 
 with col7:
   if st.button('5Y'):
-    st.write(start_date-pd.DateOffset(years=5))
+    new_date=start_date-pd.DateOffset(days=5)
+    st.write(new_date.date())
+start_date-pd.DateOffset(years=5))
 
 with col8:
   if st.button('Max'):
-    st.write(start_date)
+    new_date=start_date-pd.DateOffset(days=5)
+    st.write(new_date.date())
+start_date)
 
 
-start = dt.datetime(1980,1,1) #(2013, 1,1) #1980, 1, 1)
-end = dt.datetime(2022, 10, 1)
 
-tickers = {
-    "SP500": "^GSPC",
-    "CAC40": "^FCHI",
-}
 
-print(list(tickers.keys()))
+#print(list(tickers.keys()))
 
 #['AAPL', 'NKE', 'GOOGL','AMZN']
 
-price_data = wb.DataReader(list(tickers.values()),
-
-                        'yahoo',start) ['Adj Close'] #'yahoo', start, end) ['Close']#['Adj Close']
 
  
 
