@@ -69,7 +69,6 @@ with col8:
   if st.button('Max'):
     new_date=start_date-pd.DateOffset(days=5)
     st.write(new_date.date())
-start_date)
 
 
 
