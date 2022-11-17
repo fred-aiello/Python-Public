@@ -40,7 +40,7 @@ with col2:
 
 with col3:
   if st.button('1M'):
-    new_date=start_date-pd.DateOffset(months=1))
+    new_date=start_date-pd.DateOffset(months=1)
     st.write(new_date.date())
 
 with col4:
@@ -51,7 +51,7 @@ with col4:
 with col5:
   if st.button('YTD'):
     new_date=dt.date(start_date.year,1,1)
-    st.write()
+    st.write(new_date.date())
 
 
 
