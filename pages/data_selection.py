@@ -16,7 +16,7 @@ tickers = {
 
 
 select_eq=st.multiselect('select equity',tickers)
-selection= list([tickers[I] for I in select_eq])
+selection= [tickers[I] for I in select_eq]
 st.write('You selected ', selection)
 
 start_date=dt.date.today()
@@ -70,7 +70,7 @@ print(list(tickers.keys()))
 
 #['AAPL', 'NKE', 'GOOGL','AMZN']
 
-price_data = web.DataReader(list(tickers.values()),
+price_data = wb.DataReader(list(tickers.values()),
 
                         'yahoo',start) ['Adj Close'] #'yahoo', start, end) ['Close']#['Adj Close']
 
