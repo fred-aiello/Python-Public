@@ -18,6 +18,7 @@ tickers = {
 select_eq=st.multiselect('select equity',tickers)
 selection= list([tickers[I] for I in select_eq])
 st.write('You selected ', selection)
+st.write('You selected ', select_eq)
 
 start_date=dt.date.today()
 end_date = dt.datetime(1980,1,1) #(2013, 1,1) #1980, 1, 1)
