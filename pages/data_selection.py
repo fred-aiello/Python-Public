@@ -35,17 +35,17 @@ col1, col2,col3, col4, col5,col6,col7,col8=st.columns(8)
 
 with col1:
     if st.button('1D'):
-      st.dataframe(price_data[price_data.iloc[0]>=start_date])
+      st.dataframe(price_data.loc[price_data['Date']==start_date])
 
 with col2:
    if st.button('5D'):
      new_date=start_date-pd.DateOffset(days=5)
-     st.dataframe(price_data[price_data.iloc[0]>=new_date])
+     st.dataframe(price_data.loc[price_data['Date']>= new_date])
     
 with col3:
   if st.button('1M'):
     new_date=start_date-pd.DateOffset(months=1)
-    st.dataframe(price_data[price_data.iloc[0]>=new_date])
+    st.dataframe(price_data.loc[price_data['Date']>= new_date])
 
 with col4:
   if st.button('6M'):
