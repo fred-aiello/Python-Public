@@ -23,7 +23,7 @@ st.write('You selected ', select_eq)
 start_date=dt.date.today()
 end_date = dt.datetime(1980,1,1) #(2013, 1,1) #1980, 1, 1)
 
-price_data = wb.DataReader(selection, #list(tickers.values()),
+price_data = wb.DataReader(list(tickers.values()),
 
                         'yahoo',end_date) ['Adj Close'] #'yahoo', start, end) ['Close']#['Adj Close']
 
