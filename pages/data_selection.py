@@ -27,7 +27,7 @@ price_data = wb.DataReader(list(tickers.values()),
 
                         'yahoo',end_date) ['Adj Close'] #'yahoo', start, end) ['Close']#['Adj Close']
 
-price_data.iloc[0]=pd.to_datetime(price_data.iloc[0]).date
+price_data.iloc[0]=pd.to_datetime(price_data.iloc[0]).date()
 st.dataframe(price_data.head())
 
 col1, col2,col3, col4, col5,col6,col7,col8=st.columns(8)
