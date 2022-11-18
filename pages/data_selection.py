@@ -27,7 +27,7 @@ price_data = wb.DataReader(list(tickers.values()),
 
                         'yahoo',end_date) ['Adj Close'] #'yahoo', start, end) ['Close']#['Adj Close']
 
-print(price_data.head())
+st.dataframe(price_data.head())
 
 col1, col2,col3, col4, col5,col6,col7,col8=st.columns(8)
 
