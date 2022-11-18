@@ -29,7 +29,7 @@ price_data = wb.DataReader(list(tickers.values()),
 
 price_data.insert(0,'Date',price_data.index)
 
-st.dataframe(price_data.head())
+st.dataframe(price_data)
 
 col1, col2,col3, col4, col5,col6,col7,col8=st.columns(8)
 st.write(start_date)
