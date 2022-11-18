@@ -32,6 +32,7 @@ price_data.insert(0,'Date',price_data.index)
 st.dataframe(price_data.head())
 
 col1, col2,col3, col4, col5,col6,col7,col8=st.columns(8)
+st.write(start_date)
 
 with col1:
     if st.button('1D'):
