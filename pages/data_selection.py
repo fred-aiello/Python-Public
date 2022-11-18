@@ -38,7 +38,7 @@ st.write(len(price_data['Date'])==start_date)
 
 with col1:
     if st.button('1D'):
-      st.dataframe(price_data.loc[price_data['Date']==start_date])
+      st.dataframe(price_data.filter(items=[start_date]))
 
 with col2:
    if st.button('5D'):
