@@ -33,7 +33,8 @@ st.dataframe(price_data)
 
 col1, col2,col3, col4, col5,col6,col7,col8=st.columns(8)
 st.dataframe(price_data.loc[price_data['Date']==start_date])
-st.write(price_data.loc[price_data['Date'].idxmax()])
+st.write(price_data['Date'].max()]))
+
 
 with col1:
     if st.button('1D'):
