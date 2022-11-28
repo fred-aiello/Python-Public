@@ -19,12 +19,15 @@ df=investpy.stocks.get_stocks(country=None)
 cty=np.sort(df.country.unique())
 
 select_cty=st.selectbox('select country',cty)
-tickers=np.sort(df[df.country==select_cty].name)
-select_eq=st.multiselect('select equity',tickers)
-selection= list([tickers[I] for I in select_eq])
-st.write('You selected ', selection)
-st.write('You selected ',  investpy.stocks.get_stocks(country='France')) #None))
+tickers=np.char.upper(np.sort(df[df.country==select_cty].name).tolist())
 
+select_eq=st.multiselect('select equity',tickers)
+#selection= list([tickers[I] for I in select_eq])
+
+st.write('Country ', select_cty)
+st.write('Selected Equity ', select_eq) # investpy.stocks.get_stocks(country='France')) #None))
+
+#price_data=df[(df.name.isin(list_eq)) & (df.country==select_cty)]  
 
 start_date=dt.date.today()
 end_date = dt.datetime(1980,1,1) #(2013, 1,1) #1980, 1, 1)
