@@ -32,11 +32,9 @@ price_data=df[(df.name.isin(list_eq)) & (df.country==select_cty)]
 start_date=dt.date.today()
 end_date = dt.datetime(1980,1,1) #(2013, 1,1) #1980, 1, 1)
 
-#price_data = wb.DataReader(list(tickers.values()),
+#price_data = wb.DataReader(list(tickers.values()),'yahoo',end_date) ['Adj Close'] #'yahoo', start, end) ['Close']#['Adj Close']
 
-                        'yahoo',end_date) ['Adj Close'] #'yahoo', start, end) ['Close']#['Adj Close']
-
-price_data.insert(0,'Date',price_data.index)
+#price_data.insert(0,'Date',price_data.index)
 
 st.dataframe(price_data)
 
