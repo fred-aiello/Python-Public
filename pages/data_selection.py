@@ -19,7 +19,9 @@ df=investpy.stocks.get_stocks(country=None)
 cty=np.char.upper(np.sort(df.country.unique()).tolist())
 
 select_cty=st.selectbox('select country',cty)
-tickers=np.char.upper(np.sort(df[df.country==select_cty].name.unique()).tolist())
+tickers=np.sort(df[df.country==select_cty].name.unique()).tolist()
+
+#tickers=np.char.upper(np.sort(df[df.country==select_cty].name.unique()).tolist())
 
 select_eq=st.multiselect('select equity',tickers)
 #selection= list([tickers[I] for I in select_eq])
