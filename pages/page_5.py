@@ -27,6 +27,7 @@ if uploaded_file is not None:
     bytes_data = uploaded_file.getvalue()
     st.write(bytes_data)
 
+    '''
     # To convert to a string based IO:
     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
     st.write(stringio)
@@ -38,7 +39,7 @@ if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file)
     st.write(dataframe)
-    
+    '''   
 
     images = convert_from_path(uploaded_file)
     pdf_writer = PyPDF2.PdfFileWriter()
