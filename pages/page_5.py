@@ -51,7 +51,7 @@ if uploaded_file is not None:
     with open("OCR_Test_Searc.pdf","wb") as f:
           pdf_writer.write(f)
 
-   st.markdown("Done")
+    st.markdown("Done")
 
 st.markdown("# Page 5 🎉")
 st.sidebar.markdown("# Test OCR")
