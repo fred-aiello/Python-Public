@@ -11,3 +11,8 @@ ipywidgets>=7.7.2
 streamlit>=1.2.0
 jupyter-server-proxy>=1.2.0
 nbserverproxy>=0.8.8
+pytesseract>=0.1
+PIL>=2.2.1
+pdf2image>=1.16.0
+PyPDF2>=2.12.1
+
