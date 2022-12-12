@@ -47,14 +47,11 @@ if uploaded_file is not None:
         page=pytesseract.image_to_pdf_or_hocr(image,extension='pdf')
         pdf=PyPDF2.PdfFileReader(io.BytesIO(page))
         pdf_writer.addPage(pdf.getPage(0))
-        with open("OCR_Test_Searc.pdf","wb") as f:
+        
+    with open("OCR_Test_Searc.pdf","wb") as f:
           pdf_writer.write(f)
 
-
-    file=r'/home/frederic/Documents/Python/SDG/Github Clone/Python-Public/TEST_OCR/2042_3926.pdf'
-    df = read_pdf(file,pages='all')
-    st.write(df)
-
+   st.markdown("Done")
 
 st.markdown("# Page 5 🎉")
 st.sidebar.markdown("# Test OCR")
