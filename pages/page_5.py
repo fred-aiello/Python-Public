@@ -1,5 +1,17 @@
 # Contents of ~/my_app/pages/page_3.py
+# import libs
+import pytesseract
+from pytesseract import Output
+from PIL import Image
+import pandas as pd
+from pdf2image import convert_from_path
+import PyPDF2
+import cv2
+from tabula import read_pdf
+
 import streamlit as st
+
+
 
 st.set_page_config(
     page_title="Hello Fred",
@@ -29,6 +41,15 @@ if uploaded_file is not None:
     # Can be used wherever a "file-like" object is accepted:
     dataframe = pd.read_csv(uploaded_file)
     st.write(dataframe)
+    
+uploaded_file=r'/home/frederic/Documents/Python/SDG/Github Clone/Python-Public/TEST_OCR/2019_2020_Reg.pdf'
+images = convert_from_path(uploaded_file)
+pdf_writer = PyPDF2.PdfFileWriter()
+
+
+file=r'/home/frederic/Documents/Python/SDG/Github Clone/Python-Public/TEST_OCR/2042_3926.pdf'
+df = read_pdf(file,pages='all')
+st.write(df)
 
 
 st.markdown("# Page 4 🎉")
