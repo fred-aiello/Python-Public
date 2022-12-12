@@ -40,9 +40,15 @@ if uploaded_file is not None:
     st.write(dataframe)
     
 
-    uploaded_file=r'/home/frederic/Documents/Python/SDG/Github Clone/Python-Public/TEST_OCR/2019_2020_Reg.pdf'
     images = convert_from_path(uploaded_file)
     pdf_writer = PyPDF2.PdfFileWriter()
+    
+    for image in images:
+        page=pytesseract.image_to_pdf_or_hocr(image,extension='pdf')
+        pdf=PyPDF2.PdfFileReader(io.BytesIO(page))
+        pdf_writer.addPage(pdf.getPage(0))
+        with open("OCR_Test_Searc.pdf","wb") as f:
+          pdf_writer.write(f)
 
 
     file=r'/home/frederic/Documents/Python/SDG/Github Clone/Python-Public/TEST_OCR/2042_3926.pdf'
