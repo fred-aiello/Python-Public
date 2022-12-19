@@ -7,6 +7,8 @@ import pandas as pd
 from pdf2image import convert_from_path
 import PyPDF2
 import streamlit as st
+import os.path
+import pathlib
 
 @st.cache
 def Reader_Function(uploaded_file,FName):
