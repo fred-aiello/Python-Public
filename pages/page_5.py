@@ -59,14 +59,10 @@ if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
     #st.write(bytes_data)
-    #Reader_Function(uploaded_file,uploaded_file.name)
     parent_path = pathlib.Path(__file__).parent.parent.resolve()           
     save_path = os.path.join(parent_path, "data")
     complete_name = os.path.join(save_path, uploaded_file.name)
-    st.write(parent_path)
-    st.write(save_path)
-    st.write(complete_name)
-
+    Reader_Function(complete_name,uploaded_file.name)
     '''
     # To convert to a string based IO:
     stringio = StringIO(uploaded_file.getvalue().decode("utf-8"))
