@@ -43,6 +43,7 @@ if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
     #st.write(bytes_data)
+    st.markdown(get_table_download_link(uploaded_file), unsafe_allow_html=True)
     Reader_Function(uploaded_file,uploaded_file.name)
     
 
