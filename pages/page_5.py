@@ -43,7 +43,7 @@ if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
     #st.write(bytes_data)
-    Reader_Function(uploaded_file,Fuploaded_file.name)
+    Reader_Function(uploaded_file,uploaded_file.name)
     
 
     '''
