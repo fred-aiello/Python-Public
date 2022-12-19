@@ -43,7 +43,7 @@ if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
     #st.write(bytes_data)
-    Reader(uploaded_file,Fuploaded_file.name)
+    PDF_Reader(uploaded_file,Fuploaded_file.name)
     
 
     '''
