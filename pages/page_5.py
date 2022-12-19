@@ -9,7 +9,7 @@ import PyPDF2
 import streamlit as st
 
 @st.cache
-def PDF_Reader(uploaded_file,FName):
+def Reader_Function(uploaded_file,FName):
     
     images = convert_from_path(uploaded_file)
     pdf_writer = PyPDF2.PdfFileWriter()
@@ -43,7 +43,7 @@ if uploaded_file is not None:
     # To read file as bytes:
     bytes_data = uploaded_file.getvalue()
     #st.write(bytes_data)
-    PDF_Reader(uploaded_file,Fuploaded_file.name)
+    Reader_Function(uploaded_file,Fuploaded_file.name)
     
 
     '''
