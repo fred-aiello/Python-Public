@@ -63,7 +63,7 @@ if uploaded_file is not None:
     st.write(dataframe)
     '''
 
-st.button("Upload file to Sandbox", on_click=upload)
+#st.button("Upload file to Sandbox", on_click=upload)
     
     
 st.markdown("# Page 5 🎉")
