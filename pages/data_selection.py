@@ -16,10 +16,15 @@ tickers = {
 }
 
 df=investpy.stocks.get_stocks(country=None)
-cty=np.char.upper(np.sort(df.country.unique()).tolist())
+
+# Dataframe normalisation
+for i in range(0,len(df.columns)-1): df.iloc[:,i]=df.iloc[:,i].str.upper() 
+df.columns=df.columns.str.upper()
+
+cty=np.sort(df.COUNTRY.unique()) #.tolist())
 
 select_cty=st.selectbox('select country',cty)
-tickers=np.char.upper(np.sort(df[df.country==select_cty].name)).tolist()
+tickers=np.sort(df[df.COUNTRY==select_cty].name).tolist()
 
 #tickers=np.char.upper(np.sort(df[df.country==select_cty].name.unique()).tolist())
 
