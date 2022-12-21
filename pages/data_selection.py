@@ -35,7 +35,7 @@ select_cty=st.sidebar.multiselect('select country',cty)
 L=[]
 
 # Include tabs in the page
-for i in range(len(select_cty)): tabs=st.tabs[L.append(select_cty[i])]
+for i in range(len(select_cty)): L.append(select_cty[i]) and tabs=st.tabs[L]
         
 '''
 st.tabs(['Tab number %d' %i for i in range(10)])
