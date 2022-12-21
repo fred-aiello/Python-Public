@@ -33,7 +33,7 @@ select_cty=st.sidebar.multiselect('select country',cty)
 
 # Include tabs in the page
 for i in range(0,len(select_cty)): 
-    tabi = st.tabs("chart_" & i)
+    st.write(select_cty[i]) #tabi = st.tabs("chart_" & i)
 
 '''
 with tab1:
