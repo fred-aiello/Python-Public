@@ -29,7 +29,7 @@ DataFrame_Norm(df)
 
 cty=np.sort(df.COUNTRY.unique()).tolist()
 
-select_cty=st.selectbox('select country',cty)
+select_cty=st.multiselect('select country',cty)
 tickers=np.sort(df[df.COUNTRY.isin(select_cty)].NAME.unique()).tolist()
 
 select_eq=st.multiselect('select equity',tickers)
