@@ -15,25 +15,32 @@ tickers = {
     "JP Morgan":'JPM',
 }
 
+def DataFrame_Norm(df):
+
+    # Dataframe normalisation
+    for i in range(0,len(df.columns)-1): df.iloc[:,i]=df.iloc[:,i].str.upper() 
+    df.columns=df.columns.str.upper()
+    
+    return df
+
 df=investpy.stocks.get_stocks(country=None)
 
-# Dataframe normalisation
-for i in range(0,len(df.columns)-1): df.iloc[:,i]=df.iloc[:,i].str.upper() 
-df.columns=df.columns.str.upper()
+DataFrame_Norm(df)
 
 cty=np.sort(df.COUNTRY.unique()) #.tolist())
 
 select_cty=st.selectbox('select country',cty)
 tickers=np.sort(df[df.COUNTRY==select_cty].name).tolist()
 
-#tickers=np.char.upper(np.sort(df[df.country==select_cty].name.unique()).tolist())
+tickers=np.sort(df[df.COUNTRY.isin(select_cty)].NAME.unique())
 
 select_eq=st.multiselect('select equity',tickers)
-#selection= list([tickers[I] for I in select_eq])
+selection= list([tickers[I] for I in select_eq])
 
 st.write('Country ', select_cty)
 st.write('Selected Equity ', select_eq) # investpy.stocks.get_stocks(country='France')) #None))
 
+'''
 price_data=df[(df.name.isin(list_eq)) & (df.country==select_cty)]  
 
 start_date=dt.date.today()
@@ -109,3 +116,4 @@ st.dataframe(df)
 #def delta_time(y,m,d):
 
   #timedelta(
+'''
