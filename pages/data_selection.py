@@ -31,7 +31,7 @@ cty=np.sort(df.COUNTRY.unique()).tolist()
 
 select_cty=st.sidebar.multiselect('select country',cty)
 
-tab1=[]
+tab1=()
 L=[]
 # Include tabs in the page
 for i in range(0,len(select_cty)): 
