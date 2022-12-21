@@ -31,15 +31,19 @@ cty=np.sort(df.COUNTRY.unique()).tolist()
 
 select_cty=st.sidebar.multiselect('select country',cty)
 
-tab1=()
+
 L=[]
+
 # Include tabs in the page
+tabs=st.tabs[ L.append(select_cty[i]) for i in range(len(select_cty))]
+
+'''
 for i in range(0,len(select_cty)): 
     
     L.append(select_cty[i])
     tab1 = st.tabs(L) #st.write(select_cty[i]) 
     st.write(type(tab1))
-'''
+
 with tab1:
     st.header("Nice Chart")
     st.subheader("A tab with a chart")
