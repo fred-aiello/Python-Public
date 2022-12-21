@@ -36,7 +36,8 @@ L=[]
 
 # Include tabs in the page
 for i in range(len(select_cty)): L.append(select_cty[i]) 
-tabs=st.tabs(L)       
+st.write(L)
+#tabs=st.tabs(L)       
 '''
 st.tabs(['Tab number %d' %i for i in range(10)])
 for i in range(0,len(select_cty)): 
