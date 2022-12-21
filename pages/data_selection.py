@@ -29,7 +29,19 @@ DataFrame_Norm(df)
 
 cty=np.sort(df.COUNTRY.unique()).tolist()
 
-select_cty=st.multiselect('select country',cty)
+select_cty=st.sidebar.multiselect('select country',cty)
+
+# Include tabs in the page
+for i in range(0,len(select_cty)): 
+    tabi = st.tabs("chart_" & i)
+
+'''
+with tab1:
+    st.header("Nice Chart")
+    st.subheader("A tab with a chart")
+    st.line_chart(data)
+    st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
+
 tickers=np.sort(df[df.COUNTRY.isin(select_cty)].NAME.unique()).tolist()
 
 select_eq=st.multiselect('select equity',tickers)
@@ -38,7 +50,7 @@ selection= list([tickers[I] for I in select_eq])
 st.write('Country ', select_cty)
 st.write('Selected Equity ', select_eq) # investpy.stocks.get_stocks(country='France')) #None))
 
-'''
+
 price_data=df[(df.name.isin(list_eq)) & (df.country==select_cty)]  
 
 start_date=dt.date.today()
