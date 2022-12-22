@@ -25,7 +25,7 @@ def DataFrame_Norm(df):
     return df
 
 flag_cty={
-    'ARGENTINE': 'AR',
+    'ARGENTINA': 'AR',
     'FRANCE':'FR',
     'UNITED KINGDOM':'GB'
          }
@@ -42,7 +42,7 @@ select_cty=st.sidebar.multiselect('select country',cty)
 L=[]
 
 # Include tabs in the page
-for i in range(len(select_cty)): L.append(flag_cty.get(select_cty[i])) 
+for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i])) + select_cty[i]) 
 st.write(type(L))
 tabs=st.tabs(L)       
 
