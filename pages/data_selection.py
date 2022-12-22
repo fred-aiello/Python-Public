@@ -6,6 +6,7 @@ import pandas_datareader as wb
 import datetime as dt
 from datetime import datetime,timedelta
 import investpy 
+import flag
 
 tickers = {
     "SP500": "^GSPC",
