@@ -39,7 +39,7 @@ for i in range(len(select_cty)): L.append(select_cty[i])
 st.write(type(L))
 tabs=st.tabs(L)       
 
-with tab[0]:
+with tabs[0]:
     st.header(flag.flag("AR") + "Nice Chart")
     st.subheader("A tab with a chart")
     st.line_chart(data)
