@@ -291,7 +291,16 @@ DataFrame_Norm(df)
 
 # Country selection
 cty=np.sort(df.COUNTRY.unique()).tolist()
-select_cty=st.sidebar.multiselect('select country',cty)
+
+with st.sidebar:
+    st.title('Select your period')
+    start_date[i] = st.date_input("Start Date", value=pd.to_datetime("1980-01-01", format="%Y-%m-%d"))
+    end_date[i] = st.date_input("End Date", value=pd.to_datetime(datetime.today(), format="%Y-%m-%d"))
+    
+    st.title('select country')
+    select_cty=st.sidebar.multiselect('select country',cty)
+
+
 
 # List collecting selected countries to create tabs
 L=[]
@@ -310,8 +319,7 @@ for i in range(len(select_cty)):
         st.title(select_cty[i])
         tickers=np.sort(df[df.COUNTRY==select_cty[i]].NAME.unique()).tolist()
         select_eq=st.multiselect('select equity',tickers)
-        start_date[i] = st.date_input("Start Date", value=pd.to_datetime("1980-01-01", format="%Y-%m-%d"))
-        end_date[i] = st.date_input("End Date", value=pd.to_datetime(datetime.today(), format="%Y-%m-%d"))
+
         #st.date_input("Select start date", datetime.date(1980, 1, 1))
         #st.date_input("Select end date", datetime.date(datetime.today()))
             
