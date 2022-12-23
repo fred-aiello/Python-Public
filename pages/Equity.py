@@ -300,6 +300,10 @@ L=[]
 for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i])) + ' ' + select_cty[i]) 
 tabs=st.tabs(L)       
 
+# Initialisation of the selected period
+start_date={}
+end_date={}
+
 for i in range(len(select_cty)):
    
     with st.sidebar:     
