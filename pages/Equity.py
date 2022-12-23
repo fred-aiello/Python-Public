@@ -303,11 +303,17 @@ for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i]))
 st.write(type(L))
 tabs=st.tabs(L)       
 
-with st.sidebar:
-    st.title(select_cty)
-    tickers=np.sort(df[df.COUNTRY.isin(select_cty)].NAME.unique()).tolist()
-    select_eq=st.multiselect('select equity',tickers)
-
+for i in range(len(select_cty)):
+    
+    with st.sidebar:     
+        st.title(select_cty[i])
+        tickers=np.sort(df[df.COUNTRY.isin(select_cty[i])].NAME.unique()).tolist()
+        select_eq=st.multiselect('select equity',tickers)
+    
+    with tabs[i]:
+        st.header(flag.flag(flag_cty.get(select_cty[i]) + "Equity")
+        st.subheader("List of Equities :")
+        st.write(select_eq)
 
 '''
 for i in len(select_cty):
