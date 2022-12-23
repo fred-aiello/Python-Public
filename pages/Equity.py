@@ -289,18 +289,15 @@ df=investpy.stocks.get_stocks(country=None)
 
 DataFrame_Norm(df)
 
+# Country selection
 cty=np.sort(df.COUNTRY.unique()).tolist()
-
-st.dataframe(cty)
-
 select_cty=st.sidebar.multiselect('select country',cty)
 
-
+# List collecting selected countries to create tabs
 L=[]
 
 # Include tabs in the page
 for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i])) + ' ' + select_cty[i]) 
-st.write(type(L))
 tabs=st.tabs(L)       
 
 for i in range(len(select_cty)):
@@ -309,6 +306,9 @@ for i in range(len(select_cty)):
         st.title(select_cty[i])
         tickers=np.sort(df[df.COUNTRY==select_cty[i]].NAME.unique()).tolist()
         select_eq=st.multiselect('select equity',tickers)
+        st.date_input("Select start date", datetime.date(1980, 1, 1))
+        st.date_input("Select end date", datetime.date(date.today())
+            
     
     with tabs[i]:
         st.header(flag.flag(flag_cty.get(select_cty[i])) + "Equity")
