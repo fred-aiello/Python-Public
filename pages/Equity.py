@@ -287,6 +287,9 @@ flag_cty={
 
 df=investpy.stocks.get_stocks(country=None)
 
+
+
+
 DataFrame_Norm(df)
 
 # Country selection
@@ -323,7 +326,17 @@ for i in range(len(select_cty)):
     with tabs[i]:
         st.header(flag.flag(flag_cty.get(select_cty[i])) + "Equity")
         st.subheader("List of Equities :")
-        st.write(select_eq)
+        eq_cod=df[(df.COUNTRY==select_cty[i]) & (df.name.isin(select_eq))].SYMBOL
+        st.write(eq_cod)
+        dg=investpy.stocks.get_stock_historical_data(
+            stock=eq_cod,
+            country=select_cty[i],
+            from_date=start_date,
+            to_date=end_date,
+            order=descending
+        )
+        st.dataframe(dg)
+            
 
 '''
 for i in len(select_cty):
