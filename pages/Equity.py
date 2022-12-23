@@ -307,7 +307,7 @@ for i in range(len(select_cty)):
         tickers=np.sort(df[df.COUNTRY==select_cty[i]].NAME.unique()).tolist()
         select_eq=st.multiselect('select equity',tickers)
         st.date_input("Select start date", datetime.date(1980, 1, 1))
-        st.date_input("Select end date", datetime.date(date.today())
+        st.date_input("Select end date", datetime.date(date.today()))
             
     
     with tabs[i]:
