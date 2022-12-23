@@ -294,8 +294,8 @@ cty=np.sort(df.COUNTRY.unique()).tolist()
 
 with st.sidebar:
     st.title('Select your period')
-    start_date[i] = st.date_input("Start Date", value=pd.to_datetime("1980-01-01", format="%Y-%m-%d"))
-    end_date[i] = st.date_input("End Date", value=pd.to_datetime(datetime.today(), format="%Y-%m-%d"))
+    start_date = st.date_input("Start Date", value=pd.to_datetime("1980-01-01", format="%Y-%m-%d"))
+    end_date = st.date_input("End Date", value=pd.to_datetime(datetime.today(), format="%Y-%m-%d"))
     
     st.title('select country')
     select_cty=st.sidebar.multiselect('select country',cty)
@@ -308,10 +308,6 @@ L=[]
 # Include tabs in the page
 for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i])) + ' ' + select_cty[i]) 
 tabs=st.tabs(L)       
-
-# Initialisation of the selected period
-start_date={}
-end_date={}
 
 for i in range(len(select_cty)):
    
