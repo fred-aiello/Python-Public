@@ -304,7 +304,7 @@ st.write(type(L))
 tabs=st.tabs(L)       
 
 with st.sidebar:
-    st.title(select_cty]
+    st.title(select_cty)
     tickers=np.sort(df[df.COUNTRY.isin(select_cty)].NAME.unique()).tolist()
     select_eq=st.multiselect('select equity',tickers)
 
