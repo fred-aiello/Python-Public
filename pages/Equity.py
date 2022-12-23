@@ -303,13 +303,20 @@ for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i]))
 st.write(type(L))
 tabs=st.tabs(L)       
 
-with tabs[0]:
+with st.sidebar:
+    st.[select_cty]
+    tickers=np.sort(df[df.COUNTRY.isin(select_cty)].NAME.unique()).tolist()
+
+
+'''
+for i in len(select_cty):
+    with tabs[1]:
     st.header(flag.flag("AR") + "Nice Chart")
     st.subheader("A tab with a chart")
     #st.line_chart(data)
     st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
 
-'''
+
 st.tabs(['Tab number %d' %i for i in range(10)])
 for i in range(0,len(select_cty)): 
     
