@@ -291,6 +291,8 @@ DataFrame_Norm(df)
 
 cty=np.sort(df.COUNTRY.unique()).tolist()
 
+st.dataframe(cty)
+
 select_cty=st.sidebar.multiselect('select country',cty)
 
 
