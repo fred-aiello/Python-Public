@@ -304,7 +304,7 @@ tabs=st.tabs(L)
 with tabs[0]:
     st.header(flag.flag("AR") + "Nice Chart")
     st.subheader("A tab with a chart")
-    st.line_chart(data)
+    #st.line_chart(data)
     st.image("https://static.streamlit.io/examples/cat.jpg", width=200)
 
 '''
