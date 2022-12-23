@@ -7,6 +7,7 @@ import datetime as dt
 from datetime import datetime,timedelta
 import investpy 
 import flag
+import date
 
 tickers = {
     "SP500": "^GSPC",
