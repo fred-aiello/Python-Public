@@ -311,7 +311,7 @@ for i in range(len(select_cty)):
         select_eq=st.multiselect('select equity',tickers)
     
     with tabs[i]:
-        st.header(flag.flag(flag_cty.get(select_cty[i]) + "Equity")
+        st.header(flag.flag(flag_cty.get(select_cty[i])) + "Equity")
         st.subheader("List of Equities :")
         st.write(select_eq)
 
