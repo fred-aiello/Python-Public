@@ -304,7 +304,7 @@ st.write(type(L))
 tabs=st.tabs(L)       
 
 with st.sidebar:
-    st.[select_cty]
+    st.['TESt1','Test2']
     tickers=np.sort(df[df.COUNTRY.isin(select_cty)].NAME.unique()).tolist()
 
 
