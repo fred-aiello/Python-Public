@@ -7,7 +7,6 @@ import datetime as dt
 from datetime import datetime,timedelta
 import investpy 
 import flag
-import date
 
 tickers = {
     "SP500": "^GSPC",
@@ -308,7 +307,7 @@ for i in range(len(select_cty)):
         tickers=np.sort(df[df.COUNTRY==select_cty[i]].NAME.unique()).tolist()
         select_eq=st.multiselect('select equity',tickers)
         st.date_input("Select start date", datetime.date(1980, 1, 1))
-        st.date_input("Select end date", datetime.date(date.today()))
+        st.date_input("Select end date", datetime.date(datetime.today()))
             
     
     with tabs[i]:
