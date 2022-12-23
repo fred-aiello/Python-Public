@@ -326,7 +326,7 @@ for i in range(len(select_cty)):
     with tabs[i]:
         st.header(flag.flag(flag_cty.get(select_cty[i])) + "Equity")
         st.subheader("List of Equities :")
-        eq_cod=df[(df.COUNTRY==select_cty[i]) & (df.name.isin(select_eq))].SYMBOL
+        eq_cod=df[(df.COUNTRY==select_cty[i]) & (df.NAME.isin(select_eq))].SYMBOL
         st.write(eq_cod)
         dg=investpy.stocks.get_stock_historical_data(
             stock=eq_cod,
