@@ -23,6 +23,7 @@ def DataFrame_Norm(df):
     df.columns=df.columns.str.upper()
     
     return df
+# Preparation country flags
 
 flag_cty={
     'AFGHANISTAN':'AF',
@@ -310,13 +311,11 @@ with st.sidebar:
 L=[]
 
 # Include tabs in the page
-# for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i])) + ' ' + select_cty[i]) 
-# tabs=st.tabs(L)       
-
+for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i])) + ' ' + select_cty[i]) 
+tabs=st.tabs(L)       
+st.write('Init:',len(select_cty))
 for i in range(len(select_cty)):
-    
-    L.append(flag.flag(flag_cty.get(select_cty[i])) + ' ' + select_cty[i]) 
-      
+          
     with st.sidebar:     
         st.title(select_cty[i])
         tickers=np.sort(df[df.COUNTRY==select_cty[i]].NAME.unique()).tolist()
@@ -328,7 +327,7 @@ for i in range(len(select_cty)):
     st.write(i)
     
     with tabs[i]:
-        st.header(flag.flag(flag_cty.get(select_cty[i])) + "Equity")
+        st.header(flag.flag(flag_cty.get(select_cty[i])) + " Equity")
         st.subheader("List of Equities :")
         eq_cod=df[(df.COUNTRY==select_cty[i]) & (df.NAME.isin(select_eq))].SYMBOL
         st.write(eq_cod)
