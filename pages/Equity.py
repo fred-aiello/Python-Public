@@ -310,11 +310,13 @@ with st.sidebar:
 L=[]
 
 # Include tabs in the page
-for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i])) + ' ' + select_cty[i]) 
-tabs=st.tabs(L)       
+# for i in range(len(select_cty)): L.append(flag.flag(flag_cty.get(select_cty[i])) + ' ' + select_cty[i]) 
+# tabs=st.tabs(L)       
 
 for i in range(len(select_cty)):
-   
+    
+    L.append(flag.flag(flag_cty.get(select_cty[i])) + ' ' + select_cty[i]) 
+      
     with st.sidebar:     
         st.title(select_cty[i])
         tickers=np.sort(df[df.COUNTRY==select_cty[i]].NAME.unique()).tolist()
@@ -339,6 +341,7 @@ for i in range(len(select_cty)):
         )
         st.dataframe(dg)
             
+tabs=st.tabs(L)  
 
 '''
 for i in len(select_cty):
