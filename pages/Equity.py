@@ -53,7 +53,7 @@ flag_cty={
     'BERMUDA':'BM',
     'BHUTAN':'BT',
     'BOLIVIA':'BO',
-    'BOSNIA & HERZEGOVINA':'BA',
+    'BOSNIA':'BA',
     'BOTSWANA':'BW',
     'BOUVET ISLAND':'BV',
     'BRAZIL':'BR',
