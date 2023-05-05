@@ -302,6 +302,7 @@ with st.sidebar:
     
     st.title('select country')
     select_cty=st.sidebar.multiselect('select country',cty)
+    st.write (len(select_cty))
 
 
 
