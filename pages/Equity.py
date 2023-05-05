@@ -131,7 +131,7 @@ flag_cty={
     'HAITI':'HT',
     'HEARD & MCDONALD ISLANDS':'HM',
     'HONDURAS':'HN',
-    'HONG KONG SAR CHINA':'HK',
+    'HONG KONG':'HK',
     'HUNGARY':'HU',
     'ICELAND':'IS',
     'INDIA':'IN',
