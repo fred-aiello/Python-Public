@@ -322,6 +322,7 @@ for i in range(len(select_cty)):
         #st.date_input("Select start date", datetime.date(1980, 1, 1))
         #st.date_input("Select end date", datetime.date(datetime.today()))
             
+    st.write(i)
     
     with tabs[i]:
         st.header(flag.flag(flag_cty.get(select_cty[i])) + "Equity")
