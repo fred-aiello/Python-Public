@@ -11,6 +11,6 @@ st.set_page_config(
 }
 )
 
-
+st.write(Prog.add(2,3))
 st.markdown("# Page 4 🎉")
 st.sidebar.markdown("# Page 4 🎉")
