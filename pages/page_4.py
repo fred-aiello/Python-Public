@@ -1,5 +1,6 @@
 # Contents of ~/my_app/pages/page_3.py
 import streamlit as st
+import Functions
 
 st.set_page_config(
     page_title="Hello Fred",
