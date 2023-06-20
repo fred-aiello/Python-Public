@@ -1,6 +1,6 @@
 # Contents of ~/my_app/pages/page_3.py
 import streamlit as st
-import Functions
+import Functions/Prog as ft
 
 st.set_page_config(
     page_title="Hello Fred",
@@ -11,6 +11,6 @@ st.set_page_config(
 }
 )
 
-st.write(Prog.add(2,3))
+st.write(ft.add(2,3))
 st.markdown("# Page 4 🎉")
 st.sidebar.markdown("# Page 4 🎉")
